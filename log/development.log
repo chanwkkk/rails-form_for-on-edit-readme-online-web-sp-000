@@ -860,3 +860,43 @@ Processing by PostsController#update as HTML
 Completed   in 99722ms (ActiveRecord: 10.2ms)
 
 
+Started PATCH "/posts/1" for 65.158.219.194 at 2019-09-14 21:11:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0jMkDC98gJJ6VD58is8BaoJAVEIQRITL7SCEpAWXMP2C18JdGDGEHw2tOb+MmGCkM6vNUtS/QpE6wQIGLLPH8A==", "post"=>{"title"=>"gg", "description"=>"aaaaa"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://142.93.11.41:45478/posts/1
+Completed 302 Found in 23ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/1" for 65.158.219.194 at 2019-09-14 21:11:37 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 182ms (Views: 178.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1/edit" for 65.158.219.194 at 2019-09-14 21:11:41 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/1" for 65.158.219.194 at 2019-09-14 21:11:47 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r7IOdcGtkexhgb7iMqFD/vUCKyieRVg+jPIwloRTXkT/Vugk9uCVYRZ4uSE09iIwROmyOFq+nmRbE7Y0rXepSQ==", "post"=>{"title"=>"gg", "description"=>"again"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "again"], ["updated_at", "2019-09-14 21:11:47.613621"], ["id", 1]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://142.93.11.41:45478/posts/1
+Completed 302 Found in 41ms (ActiveRecord: 5.4ms)
+
+
