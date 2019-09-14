@@ -796,3 +796,23 @@ Processing by PostsController#edit as HTML
 Completed 200 OK in 63ms (Views: 60.2ms | ActiveRecord: 0.2ms)
 
 
+Started PATCH "/posts/1" for 65.158.219.194 at 2019-09-14 21:07:14 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jRhEk3HrB3T7aUEE5UciIVH6v9chFGBFrE9f7hXFHiTd/KLCRqYD+YyQRsfjEEPv4BEmx+Xvph97rtlMPOHpKQ==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"hihi"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2019-09-14 21:07:14.296691"], ["id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://142.93.11.41:45478/posts/1
+Completed 302 Found in 11ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/posts/1" for 65.158.219.194 at 2019-09-14 21:07:14 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
